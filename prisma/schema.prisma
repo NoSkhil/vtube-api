@@ -1,0 +1,35 @@
+generator client {
+  provider        = "prisma-client-js"
+   previewFeatures = ["omitApi"]
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model users {
+  id                  String     @id @unique @default(cuid())
+  first_name          String
+  last_name           String
+  password            String
+  email               String      @unique
+  phone_number        String?     @unique
+  country             String?
+  profile_picture_url String?
+  created_date        DateTime   @default(now())
+  updated_date        DateTime   @default(now()) @updatedAt
+}
+
+model logs {
+  id           String   @id @unique
+  type         log_type
+  content      Json
+  created_date DateTime @default(now())
+}
+
+enum log_type {
+  error
+  user_action
+}
