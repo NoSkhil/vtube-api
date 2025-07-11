@@ -1,0 +1,15 @@
+{
+  "name": "vtube-api",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "vtube-api"
+  },
+  "author": "NoSkhil",
+  "license": "ISC",
+  "description": ""
+}
